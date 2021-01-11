@@ -23,6 +23,11 @@ console.log(createStore)
 const store = createStore(counter)//Criando a store para o reducer counter
 //Metodos da store: dispatch(), getState(), replaceReducer(), subscribe(), Symbol(observable)
 
+store.subscribe(() => {
+    //Subscribe recebe uma função que é executada toda vez que uma açao é disparada
+    console.log('disparou uma ação!')
+})
+
 console.log(store.getState()) //Metodo getState() retorna o state atual
 
 store.dispatch({ type: 'INCREMENT' }) //Metodo dispatch() dispara uma açao
